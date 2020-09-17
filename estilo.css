@@ -3,6 +3,10 @@ body{
     background-repeat: no-repeat;
 }
 
+html{
+    cursor: url(imagens/mata_mosca.png) 30 30, auto;
+}
+
 .painel{
     position: absolute;
     width: 190px;

@@ -18,7 +18,7 @@ function posicaoRandom(){
 
         //Se vida for maior que 3
         if(vidas>3){
-            alert("Game Over")
+            window.location.href = 'fim_de_jogo.html'
         }else{
             //perdendo vida
             document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"

@@ -1,6 +1,7 @@
 var largura = 0
 var altura = 0
 var vidas = 1
+var tempo = 10
 
 function ajustaTelaJogo(){
     altura = window.innerHeight
@@ -9,6 +10,18 @@ function ajustaTelaJogo(){
 }
 
 ajustaTelaJogo()
+
+var cronometro = setInterval(function(){
+    tempo -= 1
+    if(tempo<0){
+        clearInterval(cronometro)
+        clearInterval(criaMosca)
+        alert('Vitoria')
+    }else{
+        document.getElementById('cronometro').innerHTML = tempo
+    }
+    
+}, 1000)
 
 function posicaoRandom(){
 

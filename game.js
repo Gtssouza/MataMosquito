@@ -11,6 +11,12 @@ ajustaTelaJogo()
 
 function posicaoRandom(){
 
+    //remover a mosca anterior caso exista
+    if(document.getElementById('mosca')){
+        document.getElementById('mosca').remove()
+    }
+
+
     var posicaoX = Math.floor(Math.random() * largura) - 90
     var posicaoY = Math.floor(Math.random() * altura) - 90
     
@@ -24,6 +30,8 @@ function posicaoRandom(){
     mosca.style.left = posicaoX + 'px'
     mosca.style.top = posicaoY + 'px'
     mosca.style.position = 'absolute'
+    //criando o id unico para a mosca
+    mosca.id = 'mosca'
     
     document.body.appendChild(mosca)
 

@@ -1,5 +1,6 @@
 var largura = 0
 var altura = 0
+var vidas = 1
 
 function ajustaTelaJogo(){
     altura = window.innerHeight
@@ -14,6 +15,18 @@ function posicaoRandom(){
     //remover a mosca anterior caso exista
     if(document.getElementById('mosca')){
         document.getElementById('mosca').remove()
+
+        //Se vida for maior que 3
+        if(vidas>3){
+            alert("Game Over")
+        }else{
+            //perdendo vida
+            document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"
+            vidas++
+        }
+       
+
+
     }
 
 
@@ -32,6 +45,11 @@ function posicaoRandom(){
     mosca.style.position = 'absolute'
     //criando o id unico para a mosca
     mosca.id = 'mosca'
+
+    //criando evento de click sobre o elemento HTML
+    mosca.onclick = function(){
+        this.remove()
+    }
     
     document.body.appendChild(mosca)
 

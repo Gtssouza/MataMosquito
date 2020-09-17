@@ -2,6 +2,18 @@ var largura = 0
 var altura = 0
 var vidas = 1
 var tempo = 10
+var criaMoscaTempo = 1500
+
+var nivel = window.location.search
+nivel = nivel.replace('?' , '')
+
+if(nivel === 'normal'){
+    criaMoscaTempo = 1500
+}else if(nivel === 'dificil'){
+    criaMoscaTempo = 1000
+}else if(nivel === 'hardcore'){
+    criaMoscaTempo = 800
+}
 
 function ajustaTelaJogo(){
     altura = window.innerHeight
@@ -36,12 +48,8 @@ function posicaoRandom(){
             //perdendo vida
             document.getElementById('v' + vidas).src = "imagens/coracao_vazio.png"
             vidas++
-        }
-       
-
-
+        }  
     }
-
 
     var posicaoX = Math.floor(Math.random() * largura) - 90
     var posicaoY = Math.floor(Math.random() * altura) - 90
@@ -64,9 +72,7 @@ function posicaoRandom(){
         this.remove()
     }
     
-    document.body.appendChild(mosca)
-
-    
+    document.body.appendChild(mosca)  
     
 }
 

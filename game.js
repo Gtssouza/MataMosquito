@@ -20,13 +20,29 @@ function posicaoRandom(){
     //criando o elemento html
     var mosca = document.createElement('img')
     mosca.src = 'imagens/mosca.png'
-    mosca.className = 'mosca'
+    mosca.className = tamanhaAleatorio()
     mosca.style.left = posicaoX + 'px'
     mosca.style.top = posicaoY + 'px'
     mosca.style.position = 'absolute'
     
     document.body.appendChild(mosca)
+
     
+}
+
+function tamanhaAleatorio(){
+    var classe = Math.floor(Math.random() * 3)
+
+    switch(classe){
+        case 0 : 
+            return 'mosca'
+        
+        case 1 :
+            return 'mosca1'
+
+        case 2 :
+            return 'mosca2'
+    }
 }
 
 
